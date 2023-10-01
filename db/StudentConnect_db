@@ -1,0 +1,113 @@
+-- Users Table
+CREATE TABLE Users (
+    user_id SERIAL PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    gmail VARCHAR(255) UNIQUE NOT NULL,
+    profilephoto VARCHAR(512), 
+    isShopOwner BOOLEAN DEFAULT FALSE,
+    momo_number VARCHAR(50),
+    whatsapp_number VARCHAR(50),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    login_at TIMESTAMP
+);
+
+-- Shops Table
+CREATE TABLE Shops (
+    id SERIAL PRIMARY KEY,
+    owner INTEGER REFERENCES Users(user_id),
+    coverPhoto VARCHAR(512),
+    whatsapp_number VARCHAR(255),
+    UNIQUE (owner)
+);
+
+-- UserFollows Table
+CREATE TABLE UserFollows (
+    follower_id INTEGER REFERENCES Users(user_id),
+    following_id INTEGER REFERENCES Users(user_id),
+    PRIMARY KEY (follower_id, following_id)
+);
+
+-- Posts Table
+CREATE TABLE Posts (
+    post_id SERIAL PRIMARY KEY,
+    poster_id INTEGER REFERENCES Users(user_id),
+    type VARCHAR(50) NOT NULL,
+    likes INTEGER DEFAULT 0,
+    dislikes INTEGER DEFAULT 0,
+    content TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Rides Table
+CREATE TABLE Rides (
+    id SERIAL PRIMARY KEY,
+    start_location VARCHAR(255) NOT NULL,
+    end_destination VARCHAR(255) NOT NULL,
+    departure_time TIMESTAMP NOT NULL,
+    creator_id INTEGER REFERENCES Users(user_id),
+    isCompleted BOOLEAN DEFAULT FALSE
+);
+
+-- RideParticipants Table
+CREATE TABLE RideParticipants (
+    ride_id INTEGER REFERENCES Rides(id),
+    user_id INTEGER REFERENCES Users(user_id),
+    status VARCHAR(50) DEFAULT 'joined',
+    PRIMARY KEY (ride_id, user_id)
+);
+
+-- Rooms Table
+CREATE TABLE Rooms (
+    room_id SERIAL PRIMARY KEY,
+    associated_ride INTEGER REFERENCES Rides(id),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    status VARCHAR(50) DEFAULT 'active'
+);
+
+-- Events Table
+CREATE TABLE Events (
+    id SERIAL PRIMARY KEY,
+    location VARCHAR(255) NOT NULL,
+    start_time TIMESTAMP NOT NULL,
+    end_time TIMESTAMP,
+    poster INTEGER REFERENCES Users(user_id),
+    description TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- EventPhotos Table
+CREATE TABLE EventPhotos (
+    photo_id SERIAL PRIMARY KEY,
+    event_id INTEGER REFERENCES Events(id),
+    photo_url VARCHAR(255) NOT NULL
+);
+
+-- EventAttendees Table
+CREATE TABLE EventAttendees (
+    event_id INTEGER REFERENCES Events(id),
+    user_id INTEGER REFERENCES Users(user_id),
+    PRIMARY KEY (event_id, user_id)
+);
+
+-- Tags Table
+CREATE TABLE Tags (
+    tag_id SERIAL PRIMARY KEY,
+    tag_name VARCHAR(50) UNIQUE NOT NULL
+);
+
+-- EventTags Table
+CREATE TABLE EventTags (
+    event_id INTEGER REFERENCES Events(id),
+    tag_id INTEGER REFERENCES Tags(tag_id),
+    PRIMARY KEY (event_id, tag_id)
+);
+
+-- Product Table
+CREATE TABLE Product (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    shopId INTEGER REFERENCES Shops(id),
+    price DECIMAL(10,2) NOT NULL,
+    isAvailable BOOLEAN DEFAULT TRUE,
+    main_photo_url VARCHAR(255)
+);
