@@ -1,0 +1,32 @@
+CREATE OR REPLACE FUNCTION update_login_timestamp()
+RETURNS TRIGGER AS $$
+BEGIN
+    NEW.login_at = NOW();
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trigger_update_login_at
+BEFORE UPDATE ON Users
+FOR EACH ROW
+WHEN (OLD.login_at IS DISTINCT FROM NEW.login_at)
+EXECUTE PROCEDURE update_login_timestamp();
+
+
+CREATE OR REPLACE FUNCTION delete_related_chatroom()
+RETURNS TRIGGER AS $$
+BEGIN
+    -- Check if the ride has been marked as completed
+    IF NEW.isCompleted = TRUE THEN
+        -- Delete the associated room
+        DELETE FROM Rooms WHERE associated_ride = NEW.id;
+    END IF;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trigger_delete_chatroom
+AFTER UPDATE OF isCompleted ON Rides
+FOR EACH ROW
+WHEN (NEW.isCompleted = TRUE)
+EXECUTE PROCEDURE delete_related_chatroom();
