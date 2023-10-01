@@ -18,4 +18,10 @@ dev_dependencies:
 
 flutter: 
   uses-material-design: true
+  assets:
+  - assets/onboard.png
+  - assets/logobk.png
+  - assets/gm.png
+
+
 
