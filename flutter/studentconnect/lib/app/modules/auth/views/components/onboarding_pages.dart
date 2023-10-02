@@ -10,7 +10,7 @@ class OnBoardingPages extends GetView<AuthController>  {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 450.0,
+      height: 360.0,
       child: PageView.builder(
         controller: controller.pageController,
         itemCount: controller.dtos.length,
