@@ -9,7 +9,11 @@ class LoginBtn extends StatelessWidget {
       onPressed: () {},
       style: ElevatedButton.styleFrom(
           fixedSize: const Size(double.infinity, 55.0),
-          backgroundColor: const Color(0xff2D4990)),
+          backgroundColor: const Color(0xff2D4990),
+          shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(5.0),
+        ),),
+          
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
