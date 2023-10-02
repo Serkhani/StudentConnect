@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 import 'package:studentconnect/app/modules/auth/views/components/login_btn.dart';
 import 'package:studentconnect/app/modules/auth/views/components/onboarding_pages.dart';
@@ -14,6 +13,7 @@ class AuthView extends GetView<AuthController> {
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
+          padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
               Row(
@@ -26,7 +26,10 @@ class AuthView extends GetView<AuthController> {
                   ),
                 ],
               ),
-              const OnBoardingPages(),
+              const SizedBox(
+                width: double.infinity,
+                height: 400.0,
+                child: OnBoardingPages()),
               const LoginBtn(),
               const SignUpBtn()
             ],
