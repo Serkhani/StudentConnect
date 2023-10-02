@@ -9,9 +9,12 @@ class OnBoardingPages extends GetView<AuthController>  {
 
   @override
   Widget build(BuildContext context) {
-    return PageView.builder(
-      controller: controller.pageController,
-      itemCount: controller.dtos.length,
-      itemBuilder: (context, index) => OnBoardingPage(dto: controller.dtos[index]));
+    return SizedBox(
+      height: 450.0,
+      child: PageView.builder(
+        controller: controller.pageController,
+        itemCount: controller.dtos.length,
+        itemBuilder: (context, index) => OnBoardingPage(dto: controller.dtos[index])),
+    );
   }
 }

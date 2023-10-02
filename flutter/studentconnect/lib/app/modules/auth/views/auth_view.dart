@@ -26,10 +26,34 @@ class AuthView extends GetView<AuthController> {
                   ),
                 ],
               ),
-              const SizedBox(
-                width: double.infinity,
-                height: 400.0,
-                child: OnBoardingPages()),
+              const Text.rich(
+          TextSpan(
+                text: 'With ',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 24,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w500,
+                  height: 0,
+                ),
+                children: [
+                  TextSpan(
+                text: 'StudentConnect',
+                style: TextStyle(
+                  color: Color(0xFF2D4890),
+                  fontSize: 24,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w500,
+                  height: 0,
+                ),
+              ),
+                ]
+              ),
+          textAlign: TextAlign.center,
+              
+        ),
+              const OnBoardingPages(),
+                
               const LoginBtn(),
               const SignUpBtn()
             ],

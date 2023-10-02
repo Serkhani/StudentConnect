@@ -16,8 +16,11 @@ class OnBoardingPage extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Image.asset(dto.image,
-        width: 200.0,
-        height: 360.0,),
+        width: double.infinity,
+        height: 250.0,
+        scale: 2,
+        fit: BoxFit.fitWidth,
+        ),
         Text.rich(
           TextSpan(
             children: [
@@ -52,7 +55,7 @@ class OnBoardingPage extends StatelessWidget {
                 ),
               ),
               TextSpan(
-                text: dto.text3,
+                text: ' ${dto.text3}',
                 style: const TextStyle(
                   color: Colors.black,
                   fontSize: 24,
@@ -65,33 +68,15 @@ class OnBoardingPage extends StatelessWidget {
           ),
           textAlign: TextAlign.center,
         ),
-        const Text.rich(
-          TextSpan(
-                text: 'With ',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 24,
-                  fontFamily: 'Inter',
-                  fontWeight: FontWeight.w500,
-                  height: 0,
-                ),
-                children: [
-                  TextSpan(
-                text: 'StudentConnect',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 24,
-                  fontFamily: 'Inter',
-                  fontWeight: FontWeight.w500,
-                  height: 0,
-                ),
-              ),
-                ]
-              ),
-          textAlign: TextAlign.center,
-              
-        ),
-      Text(dto.motto)
+        
+      Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Text(dto.motto,
+        style: const TextStyle(
+          fontSize: 12.0,
+          fontWeight: FontWeight.w400
+        ),),
+      )
       ],
     );
 
