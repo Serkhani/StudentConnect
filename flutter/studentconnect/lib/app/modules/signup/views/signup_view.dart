@@ -1,409 +1,103 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:studentconnect/app/modules/signup/views/widget/signup_btn_short.dart';
+import 'package:studentconnect/app/modules/signup/views/widget/terms_and_conditions.dart';
+import 'package:studentconnect/app/modules/signup/views/widget/upload_image_bar.dart';
 
 import '../controllers/signup_controller.dart';
+import 'widget/input_textfield.dart';
 
 class SignupView extends GetView<SignupController> {
   const SignupView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return  SafeArea(
+    return SafeArea(
       child: Scaffold(
+        backgroundColor: const Color(
+          0xffD5F2E8,
+        ),
+        appBar: AppBar(
+          leading: Image.asset(
+            'assets/logobk.png',
+            height: 98.0,
+            width: 110.0,
+          ),
+          backgroundColor: Colors.transparent,
+          elevation: 0.0,
+        ),
         body: SingleChildScrollView(
+          padding: const EdgeInsets.all(
+            8.0,
+          ),
           child: Column(
-          children: [
-            Container(
-              width: 414,
-              height: 896,
-              clipBehavior: Clip.antiAlias,
-              decoration: const BoxDecoration(color: Color(0xFFD4F2E7)),
-              child: Stack(
-                children: [
-                  Positioned(
-                    left: 20,
-                    top: 225,
-                    child: SizedBox(
-                      width: 340,
-                      height: 55,
-                      child: Stack(
-                        children: [
-                          Positioned(
-                            left: 0,
-                            top: 0,
-                            child: Container(
-                              width: 340,
-                              height: 55,
-                              decoration: ShapeDecoration(
-                                color: Colors.white,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(5)),
-                              ),
-                            ),
-                          ),
-                          const Positioned(
-                            left: 14,
-                            top: 18,
-                            child: SizedBox(
-                              width: 312,
-                              child: TextField(
-                                decoration: InputDecoration(
-                                  hintText: 'Enter your first name',
-                                  hintStyle: TextStyle(
-                                    color: Colors.black26,
-                                  ),
-                                ),
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 20,
-                                  fontFamily: 'Inter',
-                                  fontWeight: FontWeight.w400,
-                                  height: 0,
-                                ),
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    left: 20,
-                    top: 311,
-                    child: SizedBox(
-                      width: 340,
-                      height: 55,
-                      child: Stack(
-                        children: [
-                          Positioned(
-                            left: 0,
-                            top: 0,
-                            child: Container(
-                              width: 340,
-                              height: 55,
-                              decoration: ShapeDecoration(
-                                color: Colors.white,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(5)),
-                              ),
-                            ),
-                          ),
-                          const Positioned(
-                            left: 14,
-                            top: 18,
-                            child: SizedBox(
-                              width: 312,
-                              child: TextField(
-                                decoration: InputDecoration(
-                                    hintText: 'Last name',
-                                    hintStyle: TextStyle(color: Colors.black26)),
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 20,
-                                  fontFamily: 'Inter',
-                                  fontWeight: FontWeight.w400,
-                                  height: 0,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    left: 20,
-                    top: 397,
-                    child: SizedBox(
-                      width: 340,
-                      height: 55,
-                      child: Stack(
-                        children: [
-                          Positioned(
-                            left: 0,
-                            top: 0,
-                            child: Container(
-                              width: 340,
-                              height: 55,
-                              decoration: ShapeDecoration(
-                                color: Colors.white,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(5)),
-                              ),
-                            ),
-                          ),
-                          const Positioned(
-                            left: 14,
-                            top: 18,
-                            child: SizedBox(
-                              width: 312,
-                              child: TextField(
-                                decoration: InputDecoration(
-                                    hintText: 'Email/phone number',
-                                    hintStyle: TextStyle(color: Colors.black26)),
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 16,
-                                  fontFamily: 'Inter',
-                                  fontWeight: FontWeight.w400,
-                                  height: 0,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    left: 20,
-                    top: 483,
-                    child: SizedBox(
-                      width: 340,
-                      height: 55,
-                      child: Stack(
-                        children: [
-                          Positioned(
-                            left: 0,
-                            top: 0,
-                            child: Container(
-                              width: 340,
-                              height: 55,
-                              decoration: ShapeDecoration(
-                                color: Colors.white,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(5)),
-                              ),
-                            ),
-                          ),
-                          const Positioned(
-                            left: 14,
-                            top: 18,
-                            child: SizedBox(
-                              width: 312,
-                              child: TextField(
-                                decoration: InputDecoration(
-                                    hintText: 'Password',
-                                    hintStyle: TextStyle(color: Colors.black26)),
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 16,
-                                  fontFamily: 'Inter',
-                                  fontWeight: FontWeight.w400,
-                                  height: 0,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    left: 20,
-                    top: 570,
-                    child: SizedBox(
-                      width: 340,
-                      height: 55,
-                      child: Stack(
-                        children: [
-                          Positioned(
-                            left: 0,
-                            top: 0,
-                            child: Container(
-                              width: 340,
-                              height: 55,
-                              decoration: ShapeDecoration(
-                                color: Colors.white,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(5)),
-                              ),
-                            ),
-                          ),
-                          const Positioned(
-                            left: 14,
-                            top: 18,
-                            child: SizedBox(
-                              width: 312,
-                              child: TextField(
-                                decoration: InputDecoration(
-                                    hintText: 'Confirm password',
-                                    hintStyle: TextStyle(color: Colors.black26)),
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 16,
-                                  fontFamily: 'Inter',
-                                  fontWeight: FontWeight.w400,
-                                  height: 0,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  const Positioned(
-                    left: 155,
-                    top: 92,
-                    child: Text(
-                      'Welcome!',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 24,
-                        fontFamily: 'Inter',
-                        fontWeight: FontWeight.w400,
-                        height: 0,
-                      ),
-                    ),
-                  ),
-                  const Positioned(
-                    left: 37,
-                    top: 150,
-                    child: Text(
-                      'Sign up for StudentsConnect',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 18,
-                        fontFamily: 'Inter',
-                        fontWeight: FontWeight.w400,
-                        height: 0,
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    left: 109,
-                    top: 736,
-                    child: SizedBox(
-                      width: 196,
-                      height: 55,
-                      child: Stack(
-                        children: [
-                          Positioned(
-                            left: 0,
-                            top: 0,
-                            child: Container(
-                              width: 196,
-                              height: 55,
-                              decoration: ShapeDecoration(
-                                color: const Color(0xFF2D4890),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                              ),
-                            ),
-                          ),
-                          const Positioned(
-                            left: 61,
-                            top: 15,
-                            child: Text(
-                              'Sign Up',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                                fontFamily: 'Inter',
-                                fontWeight: FontWeight.w600,
-                                height: 0,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  const Positioned(
-                    left: 67,
-                    top: 645,
-                    child: SizedBox(
-                      width: 305,
-                      child: Text.rich(
-                        TextSpan(
-                          children: [
-                            TextSpan(
-                              text:
-                                  'By clicking on ‘sign up’, you’re agreeing to the StudentConnects ',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 11,
-                                fontFamily: 'Inter',
-                                fontWeight: FontWeight.w400,
-                                height: 0,
-                              ),
-                            ),
-                            TextSpan(
-                              text: 'Terms of Service',
-                              style: TextStyle(
-                                color: Color(0xFF2D4890),
-                                fontSize: 11,
-                                fontFamily: 'Inter',
-                                fontWeight: FontWeight.w500,
-                                height: 0,
-                              ),
-                            ),
-                            TextSpan(
-                              text: ' and ',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 11,
-                                fontFamily: 'Inter',
-                                fontWeight: FontWeight.w400,
-                                height: 0,
-                              ),
-                            ),
-                            TextSpan(
-                              text: 'Privacy',
-                              style: TextStyle(
-                                color: Color(0xFF2D4890),
-                                fontSize: 11,
-                                fontFamily: 'Inter',
-                                fontWeight: FontWeight.w500,
-                                height: 0,
-                              ),
-                            ),
-                            TextSpan(
-                              text: ' ',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 11,
-                                fontFamily: 'Inter',
-                                fontWeight: FontWeight.w500,
-                                height: 0,
-                              ),
-                            ),
-                            TextSpan(
-                              text: 'Policy',
-                              style: TextStyle(
-                                color: Color(0xFF2D4890),
-                                fontSize: 11,
-                                fontFamily: 'Inter',
-                                fontWeight: FontWeight.w500,
-                                height: 0,
-                              ),
-                            ),
-                          ],
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Obx(
+                () => controller.isLoading.value
+                    ? const CircularProgressIndicator.adaptive()
+                    : const Text(
+                        'Welcome!',
+                        style: TextStyle(
+                          fontSize: 24.0,
+                          fontWeight: FontWeight.w400,
                         ),
                       ),
-                    ),
-                  ),
-                  Positioned(
-                    left: 15,
-                    top: -40,
-                    child: Container(
-                      width: 150,
-                      height: 200,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage('assets/logobk.png'),
-                          fit: BoxFit.contain,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
               ),
-            ),
-          ],
-        )
+              const Padding(
+                padding: EdgeInsets.symmetric(
+                  vertical: 24.0,
+                ),
+                child: Row(
+                  children: [
+                    Text(
+                      'Sign Up for StudentConnect',
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              TextInputField(
+                labelText: 'First Name',
+                hintText: 'eg: Nora',
+                textEdCon: controller.firstNameTxtCon,
+                obscureText: controller.noTextObscure,
+              ),
+              TextInputField(
+                labelText: 'Last Name',
+                hintText: 'eg: Paditey',
+                textEdCon: controller.lastNameTxtCon,
+                obscureText: controller.noTextObscure,
+              ),
+              TextInputField(
+                labelText: 'Email',
+                hintText: 'eg: nora_pd@st.ug.edu.gh',
+                textEdCon: controller.emailTxtCon,
+                obscureText: controller.noTextObscure,
+                textInputType: TextInputType.emailAddress,
+              ),
+              TextInputField(
+                labelText: 'Phone Number(Whatsapp)',
+                hintText: 'eg: +233263787789',
+                textEdCon: controller.whatsappNumTxtCon,
+                obscureText: controller.noTextObscure,
+                textInputType: TextInputType.phone,
+              ),
+              TextInputField(
+                labelText: 'Momo Number',
+                hintText: 'eg: 0550438281',
+                textEdCon: controller.momoNumTxtCon,
+                obscureText: controller.noTextObscure,
+                textInputType: TextInputType.phone,
+              ),
+              const UploadImageBar(),
+              const TermsAndConditions(),
+              const SignUpBtnShort()
+            ],
+          ),
         ),
       ),
     );
