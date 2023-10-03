@@ -20,18 +20,10 @@ Today's students face:
 
 Addressing the above, we introduce:
 
-1. **Centralized Marketplace** 📊: All your needs including various products, electronics and clothing in one place.
-
-![Homepage](https://github.com/Serkhani/StudentConnect/assets/102630199/49e5e6f5-9a84-45b4-a581-e077f697f44e)
-
-3. **Reduced Information Overload** 🍃: An organized, single point of reference.
-
-![Homepage - Events](https://github.com/Serkhani/StudentConnect/assets/102630199/918455d4-4e34-439e-9a67-fe6276318b51)
-
-5. **Efficient Transportation** 🚕: Share rides, save money, and travel conveniently.
-
-![Homepage - RideShare](https://github.com/Serkhani/StudentConnect/assets/102630199/e31bb101-1b2e-4a2b-abe9-92853ba095d6)
-
+|1. **Centralized Marketplace** 📊|3. **Reduced Information Overload** 🍃|5. **Efficient Transportation** 🚕|
+|:---:|:---:|:---:|
+|All your needs including various products, electronics and clothing in one place|An organized, single point of reference|Share rides, save money, and travel conveniently|
+|![Homepage](https://github.com/Serkhani/StudentConnect/assets/102630199/49e5e6f5-9a84-45b4-a581-e077f697f44e)|![Homepage - Events](https://github.com/Serkhani/StudentConnect/assets/102630199/918455d4-4e34-439e-9a67-fe6276318b51)|![Homepage - RideShare](https://github.com/Serkhani/StudentConnect/assets/102630199/e31bb101-1b2e-4a2b-abe9-92853ba095d6)|
 
 ---
 
