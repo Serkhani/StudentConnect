@@ -46,6 +46,10 @@ class UserPost extends StatelessWidget {
             ),
             Text(
               post.description,
+              style: const TextStyle(
+                fontWeight: FontWeight.w500,
+                fontSize: 16.0,
+              ),
             ),
             Container(
               padding: const EdgeInsets.all(8.0),
