@@ -41,14 +41,64 @@ class HomeView extends GetView<HomeController> {
                 shrinkWrap: true,
                 itemBuilder: (context, index) => UserPost(
                   post: controller.posts[index],
-                  thumbsDown: ()=>controller.thumbsDown(controller.posts[index]),
-                  thumbsUp: ()=>controller.thumbsUp(controller.posts[index]),
-                  share: ()=>controller.share(),
-                  bookmark: ()=>controller.bookmark(controller.posts[index]),
+                  thumbsDown: () =>
+                      controller.thumbsDown(controller.posts[index]),
+                  thumbsUp: () => controller.thumbsUp(controller.posts[index]),
+                  share: () => controller.share(),
+                  bookmark: () => controller.bookmark(controller.posts[index]),
                 ),
               ),
-            )
+            ),
+            Obx(
+              () => AnimatedContainer(
+                duration: const Duration(milliseconds: 300),
+                height: controller.isIconsVisible.value ? 50 : 0,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.production_quantity_limits,
+                        size: 36,
+                        color: Colors.blue,
+                      ),
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.event_available,
+                        size: 36,
+                        color: Colors.green,
+                      ),
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.car_rental,
+                        size: 36,
+                        color: Colors.orange,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
           ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          if (controller.isIconsVisible.value) {
+            controller.hideIcons();
+          } else {
+            controller.showIcons();
+          }
+        },
+        child: Obx(
+          () => Icon(
+            controller.isIconsVisible.value ? Icons.close : Icons.add,
+          ),
         ),
       ),
     );

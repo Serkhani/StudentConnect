@@ -68,4 +68,14 @@ class HomeController extends GetxController {
       isBookmark: false.obs,
     ),
   ];
+
+  final RxBool isIconsVisible = false.obs;
+
+  void showIcons() {
+    isIconsVisible.value = true;
+  }
+
+  void hideIcons() {
+    isIconsVisible.value = false;
+  }
 }
