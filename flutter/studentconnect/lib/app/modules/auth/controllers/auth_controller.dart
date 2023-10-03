@@ -31,21 +31,47 @@ class AuthController extends GetxController {
   void loginWithGoogle() {
     isLoading.value = true;
     Future.delayed(
-        const Duration(
-          seconds: 3,
-        ), () {
-      isLoading.value = false;
-      Get.offAllNamed(Routes.HOME);
-    });
+      const Duration(
+        seconds: 3,
+      ),
+      () {
+        Get.snackbar(
+          'Error',
+          "Could not log in",
+          backgroundColor: Colors.red.shade100,
+          borderRadius: 8.0,
+          barBlur: 2.6,
+          dismissDirection: DismissDirection.horizontal,
+          icon: const Icon(
+            Icons.dangerous_outlined,
+            color: Colors.redAccent,
+          ),
+        );
+        isLoading.value = false;
+      },
+    );
   }
+
   void signUp() {
     isLoading.value = true;
     Future.delayed(
         const Duration(
           seconds: 3,
         ), () {
-      isLoading.value = false;
+      Get.snackbar(
+        'Done',
+        "Sign Up Successfull",
+        backgroundColor: Colors.green.shade50,
+        borderRadius: 8.0,
+        barBlur: 2.6,
+        dismissDirection: DismissDirection.horizontal,
+        icon: const Icon(
+          Icons.check_circle_outline,
+          color: Colors.greenAccent,
+        ),
+      );
       Get.offAllNamed(Routes.SIGNUP);
+      isLoading.value = false;
     });
   }
 
