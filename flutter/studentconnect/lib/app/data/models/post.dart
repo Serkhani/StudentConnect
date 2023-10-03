@@ -1,21 +1,22 @@
-import 'package:flutter/material.dart';
 import 'package:studentconnect/app/data/enums/postenum.dart';
+
+import 'user.dart';
 
 class Post {
   int id;
   String name;
-  int posterId; //(FK: Users.user_id)
+  User poster; //(FK: Users.user_id)
   PostEnum type; // (Enum: 'event', 'product', 'ride')
   String location;
   int likes;
   int dislikes;
   String description;
   List<String> images;
-  TimeOfDay createdAt;
+  DateTime createdAt;
   Post(
       {required this.id,
       required this.name,
-      required this.posterId,
+      required this.poster,
       required this.type,
       required this.location,
       required this.likes,
@@ -28,7 +29,7 @@ class Post {
     return Post(
         id: json['id'],
         name: json['name'],
-        posterId: json['posterId'],
+        poster: json['poster'],
         type: json['type'],
         likes: json['likes'],
         images: json['images'],
@@ -42,7 +43,7 @@ class Post {
     return {
       'id': id,
       'name': name,
-      'posterId': posterId,
+      'poster': poster,
       'type': type,
       'likes': likes,
       'images': images,
