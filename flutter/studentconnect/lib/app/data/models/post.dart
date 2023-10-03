@@ -10,6 +10,7 @@ class Post {
   int likes;
   int dislikes;
   String description;
+  List<String> images;
   TimeOfDay createdAt;
   Post(
       {required this.id,
@@ -18,6 +19,7 @@ class Post {
       required this.type,
       required this.location,
       required this.likes,
+      required this.images,
       required this.dislikes,
       required this.description,
       required this.createdAt});
@@ -29,6 +31,7 @@ class Post {
         posterId: json['posterId'],
         type: json['type'],
         likes: json['likes'],
+        images: json['images'],
         location: json['location'],
         dislikes: json['dislikes'],
         description: json['description'],
@@ -42,6 +45,7 @@ class Post {
       'posterId': posterId,
       'type': type,
       'likes': likes,
+      'images': images,
       'location': location,
       'dislikes': dislikes,
       'description': description,
