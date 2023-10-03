@@ -39,7 +39,13 @@ class HomeView extends GetView<HomeController> {
               child: ListView.builder(
                 itemCount: controller.posts.length,
                 shrinkWrap: true,
-                itemBuilder: (context, index) => UserPost(post: controller.posts[index]),
+                itemBuilder: (context, index) => UserPost(
+                  post: controller.posts[index],
+                  thumbsDown: ()=>controller.thumbsDown(controller.posts[index]),
+                  thumbsUp: ()=>controller.thumbsUp(controller.posts[index]),
+                  share: ()=>controller.share(),
+                  bookmark: ()=>controller.bookmark(controller.posts[index]),
+                ),
               ),
             )
           ],

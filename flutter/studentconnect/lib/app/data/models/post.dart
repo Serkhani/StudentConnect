@@ -1,3 +1,4 @@
+import 'package:get/get.dart';
 import 'package:studentconnect/app/data/enums/postenum.dart';
 
 import 'user.dart';
@@ -8,8 +9,11 @@ class Post {
   User poster; //(FK: Users.user_id)
   PostEnum type; // (Enum: 'event', 'product', 'ride')
   String location;
-  int likes;
-  int dislikes;
+  RxInt likes;
+  RxInt dislikes;
+  RxBool isThumbsUp;
+  RxBool isThumbsDown;
+  RxBool isBookmark;
   String description;
   List<String> images;
   DateTime createdAt;
@@ -20,6 +24,9 @@ class Post {
       required this.type,
       required this.location,
       required this.likes,
+      required this.isThumbsUp,
+      required this.isThumbsDown,
+      required this.isBookmark,
       required this.images,
       required this.dislikes,
       required this.description,
@@ -33,6 +40,9 @@ class Post {
         type: json['type'],
         likes: json['likes'],
         images: json['images'],
+        isThumbsUp: json['isThumbsUp'],
+        isThumbsDown: json['isThumbsDown'],
+        isBookmark: json['isBookmark'],
         location: json['location'],
         dislikes: json['dislikes'],
         description: json['description'],
@@ -47,6 +57,9 @@ class Post {
       'type': type,
       'likes': likes,
       'images': images,
+      'isThumbsUp': isThumbsUp,
+      'isThumbsDown': isThumbsDown,
+      'isBookmark': isBookmark,
       'location': location,
       'dislikes': dislikes,
       'description': description,
