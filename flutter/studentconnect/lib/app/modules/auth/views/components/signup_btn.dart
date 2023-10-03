@@ -1,19 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class SignUpBtn extends StatelessWidget {
+import '../../controllers/auth_controller.dart';
+
+class SignUpBtn extends GetView<AuthController> {
   const SignUpBtn({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // return ElevatedButton(
-    //   onPressed: () {},
-    //   style: ElevatedButton.styleFrom(
-    //     backgroundColor: Colors.transparent,
-    //     shape: Outline
-    //   ),
-    //   child: const Text('Sign Up'));
     return OutlinedButton(
-      onPressed: () {},
+      onPressed: ()=> controller.signUp(),
       style: ElevatedButton.styleFrom(
         fixedSize: const Size(double.infinity, 55.0),
         side: const BorderSide(
