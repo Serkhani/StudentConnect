@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class LoginBtn extends StatelessWidget {
+import '../../controllers/auth_controller.dart';
+
+class LoginBtn extends GetView<AuthController> {
   const LoginBtn({super.key});
 
   @override
@@ -8,22 +11,25 @@ class LoginBtn extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () => controller.loginWithGoogle(),
         style: ElevatedButton.styleFrom(
-            fixedSize: const Size(double.infinity, 55.0),
-            backgroundColor: const Color(0xff2D4990),
-            shape: RoundedRectangleBorder(
+          fixedSize: const Size(double.infinity, 55.0),
+          backgroundColor: const Color(0xff2D4990),
+          shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(5.0),
-          ),),
-            
+          ),
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Image.asset(
-              'assets/gm.png',
-              width: 30.0,
-              height: 26.5,
-            ),
+            Obx(() => 
+            controller.isLoading.value
+            ? const CircularProgressIndicator()
+            : Image.asset(
+                  'assets/gm.png',
+                  width: 30.0,
+                  height: 26.5,
+                )),
             const Text(
               'Log in with your Google account',
               style: TextStyle(
