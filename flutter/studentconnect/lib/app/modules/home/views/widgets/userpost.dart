@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:studentconnect/app/data/enums/postenum.dart';
 import 'package:studentconnect/app/data/models/post.dart';
 
 class UserPost extends StatelessWidget {
@@ -28,7 +29,9 @@ class UserPost extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const CircleAvatar(),
+                CircleAvatar(
+                  backgroundImage: AssetImage(post.poster.profilePhoto)
+                ),
                 SizedBox(
                   width: 200.0,
                   child: Column(
@@ -53,7 +56,12 @@ class UserPost extends StatelessWidget {
                 ),
                 ElevatedButton(
                   onPressed: (){},
-                  child: const Text('Follow'),
+                  child: 
+                  post.type == PostEnum.event
+                  ? const Text('Attend')
+                  : post.type == PostEnum.product
+                  ?const Text('Follow')
+                  :const Text('Join'),
                 ),
               ],
             ),
@@ -68,8 +76,8 @@ class UserPost extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               height: 360.0,
               child: PageView.builder(
-                itemCount: 4,
-                itemBuilder: (context, index) => const Placeholder(),
+                itemCount: post.images.length,
+                itemBuilder: (context, index) => Image.asset(post.images[index]),
               ),
             ),
             Row(
