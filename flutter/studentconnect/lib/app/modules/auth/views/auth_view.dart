@@ -12,21 +12,20 @@ class AuthView extends GetView<AuthController> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: SingleChildScrollView(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: [
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Image.asset(
+        appBar: AppBar(
+          leading: Image.asset(
                     'assets/logobk.png',
                     height: 98.0,
                     width: 110.0,
                   ),
-                ],
-              ),
-              const Text.rich(
+                  backgroundColor: Colors.transparent,
+                  elevation: 0.0,
+        ),
+        body: const SingleChildScrollView(
+          padding: EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+              Text.rich(
           TextSpan(
                 text: 'With ',
                 style: TextStyle(
@@ -52,10 +51,10 @@ class AuthView extends GetView<AuthController> {
           textAlign: TextAlign.center,
               
         ),
-              const OnBoardingPages(),
+              OnBoardingPages(),
                 
-              const LoginBtn(),
-              const SignUpBtn()
+              LoginBtn(),
+              SignUpBtn()
             ],
           ),
         ),
