@@ -48,9 +48,7 @@ We welcome feedback and suggestions on the UI designs. If you have any comments 
 
 If you are part of our design or development team and need to collaborate on the designs, please let us know, and we can grant you access to edit the Figma files.
 
-## Questions and Support
 
-If you have any questions or encounter issues while accessing the Figma designs, please feel free to reach out to our team at [contact@example.com](mailto:contact@example.com).
 
 We hope you find these UI designs informative and valuable for our StudentConnect project. Thank you for your interest and contributions!
 
