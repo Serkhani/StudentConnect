@@ -42,12 +42,11 @@ We're public for a reason! 🌍 Encouraging collaboration, feedback, and growth.
 ---
 
 ## Contributors
-
-      Boniface Delali Dakey
-      Evans Acheampong 
-      Semanyoh Nissi Kekeli
-      Michael Kwabena Adu-Gyamfi
-      Benneh Prince
+- [Boniface Delali Dakey](https://github.com/Serkhani)
+- [Evans Acheampong](https://github.com/AWESOME04)
+- [Semanyoh Nissi Kekeli](https://github.com/lordofcodess)
+- [Michael Kwabena Adu-Gyamfi](https://github.com/mikkayadu)
+- [Benneh Prince](https://github.com/spongebobx18)
 
 ## Contributing
 
