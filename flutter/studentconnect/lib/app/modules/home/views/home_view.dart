@@ -34,7 +34,36 @@ class HomeView extends GetView<HomeController> {
       body: SizedBox(
         child: Column(
           children: [
-            const SearchBar(),
+            const SearchBar(
+              leading: Icon(Icons.search),
+              hintText: 'Search',
+            ),
+            const Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Chip(
+              label: Text('All categories'),
+              backgroundColor: Colors.blue,
+              labelStyle: TextStyle(color: Colors.white),
+            ),
+            Chip(
+              label: Text('Products'),
+              backgroundColor: Colors.green,
+              labelStyle: TextStyle(color: Colors.white),
+            ),
+            Chip(
+              label: Text('Events'),
+              backgroundColor: Colors.orange,
+              labelStyle: TextStyle(color: Colors.white),
+            ),
+            Chip(
+              label: Text('Rides'),
+              backgroundColor: Colors.red,
+              labelStyle: TextStyle(color: Colors.white),
+            ),
+          ],
+        ),
+      
             Expanded(
               child: ListView.builder(
                 itemCount: controller.posts.length,
@@ -57,7 +86,7 @@ class HomeView extends GetView<HomeController> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () => controller.addProductPage(),
                       icon: const Icon(
                         Icons.production_quantity_limits,
                         size: 36,
@@ -65,7 +94,7 @@ class HomeView extends GetView<HomeController> {
                       ),
                     ),
                     IconButton(
-                      onPressed: () {},
+                      onPressed: ()  => controller.addEventPage(),
                       icon: const Icon(
                         Icons.event_available,
                         size: 36,
@@ -73,7 +102,7 @@ class HomeView extends GetView<HomeController> {
                       ),
                     ),
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () => controller.addRidePage(),
                       icon: const Icon(
                         Icons.car_rental,
                         size: 36,

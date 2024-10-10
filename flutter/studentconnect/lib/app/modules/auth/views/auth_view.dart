@@ -24,6 +24,7 @@ class AuthView extends GetView<AuthController> {
         body: const SingleChildScrollView(
           padding: EdgeInsets.all(8.0),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text.rich(
           TextSpan(
